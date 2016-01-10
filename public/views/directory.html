@@ -1,0 +1,39 @@
+
+  <div class="bgSizeCover">
+  <p class="title move-down">Coworking Stock Photos</p>
+  <p class="subtitle move-up">Photos you can afford</p>
+</div>
+
+
+<div class="container" >
+  <div ng-repeat="collection in collections">
+    <!--<a ng-href="/collection/{{$index}}">-->
+      <div class="grid one">
+        <figure class="effect-hover">
+          <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}"/>
+          <figcaption>
+            <h2>{{collection.title1}}<span>{{collection.title2}}</span></h2>
+            <p>{{collection.description}}</p>
+          </figcaption>    
+        </figure>
+      </div>
+    <!--</a>-->
+  </div>
+</div>
+
+ <script>
+  $(window).scroll(function() {
+    $('.test').each(setPullUp);
+  });
+function setPullUp5000 () {
+  setPullUp(5000);
+}
+  function setPullUp(delayNum){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow+400) {
+        $(this).delay(delayNum).addClass("pullUp");
+      }
+    }
+</script>

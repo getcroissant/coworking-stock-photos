@@ -1,0 +1,10 @@
+node_modules
+tmp
+.DS_Store
+.idea/
+*.iml
+public/static
+public/robots.txt
+coverage
+*.log
+other
