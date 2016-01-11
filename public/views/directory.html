@@ -4,22 +4,35 @@
   <p class="subtitle move-up">Photos you can afford</p>
 </div>
 
-
-<div class="container" >
-  <div ng-repeat="collection in collections">
-    <a ng-href="#/collection/{{collection.slug}}">
-      <div class="grid one">
-        <figure class="effect-hover">
-          <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}"/>
-          <figcaption>
-            <h2>{{collection.title1}}<span>{{collection.title2}}</span></h2>
-            <p>{{collection.description}}</p>
-          </figcaption>    
-        </figure>
-      </div>
-    </a>
+  <div ng-if="isDesktop || isTablet" class="container">
+    <div ng-repeat="collection in collections">
+      <a ng-href="#/collection/{{collection.slug}}">
+        <div class="grid one">
+          <figure class="effect-hover">
+            <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}"/>
+            <figcaption>
+              <h2>{{collection.title1}}<span>{{collection.title2}}</span></h2>
+              <p>{{collection.description}}</p>
+            </figcaption>    
+          </figure>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
+
+  <div ng-if="isMobile">
+    <br>
+    <div ng-repeat="collection in collections">
+      <center>
+        <a ng-href="#/collection/{{collection.slug}}" style="color:black;text-decoration:none;">
+          <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}"/>
+          <br>
+          <strong>{{collection.title1}}</strong>{{collection.title2}}
+          <br><br>
+        </a>
+      </center>
+    </div>
+  </div>
 
  <script>
   $(window).scroll(function() {

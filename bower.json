@@ -24,6 +24,7 @@
   "dependencies": {
     "angular": "~1.2.22",
     "angular-route": "~1.2.22",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "angular-media-queries": "~0.6.0"
   }
 }

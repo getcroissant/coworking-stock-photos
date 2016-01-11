@@ -1,4 +1,4 @@
-var app = angular.module('CoworkingStockPhotos', ['ngRoute']);
+var app = angular.module('CoworkingStockPhotos', ['ngRoute', 'matchMedia']);
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(false);
@@ -16,3 +16,15 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
     redirectTo: '/'
   });
 }]);
+
+app.run(function($rootScope, screenSize) {
+
+  if (screenSize.is('xs')) {
+    $rootScope.isMobile = true;
+  } else if (screenSize.is('sm')) {
+    $rootScope.isTablet = true;
+  } else if (screenSize.is('md, lg')) {
+    $rootScope.isDesktop = true;
+  }
+
+});
