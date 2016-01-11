@@ -4,7 +4,7 @@
   <p class="subtitle move-up">Photos you can afford</p>
 </div>
 
-  <div ng-if="isDesktop || isTablet" class="container">
+  <div ng-if="isDesktop" class="container">
     <div ng-repeat="collection in collections">
       <a ng-href="#/collection/{{collection.slug}}">
         <div class="grid one">
@@ -20,15 +20,15 @@
     </div>
   </div>
 
-  <div ng-if="isMobile">
+  <div ng-if="isMobile || isTablet">
     <br>
     <div ng-repeat="collection in collections">
       <center>
         <a ng-href="#/collection/{{collection.slug}}" style="color:black;text-decoration:none;">
-          <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}"/>
+          <img ng-src="{{collection.cover}}" alt="{{collection.title1}} {{collection.title2}}" style="width:100%"/>
           <br>
-          <strong>{{collection.title1}}</strong>{{collection.title2}}
-          <br><br>
+          <span style="font-size:46px;"><strong>{{collection.title1}}</strong>{{collection.title2}}</span>
+          <br><br><br>
         </a>
       </center>
     </div>
