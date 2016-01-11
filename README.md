@@ -23,8 +23,9 @@ npm install -g gulp
 gulp
 ```
 
-Start the application server
+Start a web server
 ```
+cd public
 python -m SimpleHTTPServer
 ```
 

@@ -1,5 +1,9 @@
-app.controller('CollectionCtrl', function ($scope, $routeParams, Collection) {
+app.controller('CollectionCtrl', function ($scope, $routeParams, $anchorScroll, Collection) {
 
-  $scope.collection = Collection.getCollection($routeParams.collectionId);
+  $anchorScroll();
+
+  $scope.baseUrl = window.location.origin + '/';
+
+  $scope.collection = Collection.getCollectionBySlug($routeParams.collectionSlug);
 
 });

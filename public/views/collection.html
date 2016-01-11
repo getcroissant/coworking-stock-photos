@@ -1,12 +1,22 @@
-<div id="collection">
-  <div class="container" ng-repeat="image in collection.fullSized">
+<div class="collection">
+  <br>
+  <h1><strong>{{collection.title1}}</strong>{{collection.title2}}</h1>
+  <br>
+  <a href="/#/">&larr; Back to Home</a>
+
+  <br><br>
+
+  <div ng-repeat="pic in collection.pics">
+    <br>
     <center>
-      <img ng-src="{{image.url}}"/>
+      <img ng-src="{{pic}}"/>
       <p>
-        Image Url:<input type="text" id="txtfld" onClick="SelectAll('txtfld');" style="width:auto" value = "{{image.url}}" />
+        Download Url:<br>
+        <input type="text" id="txtfld" onClick="SelectAll('txtfld');" style="width:100%" value="{{baseUrl + pic}}" />
       </p>
     </a>
     </center>
+    <br><br>
   </div>
 </div>
 
